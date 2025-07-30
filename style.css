@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex; /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Make body at least full viewport height */
+    margin: 0;
+    background-color: #f4f4f4;
+    overflow: hidden; /* Hide scrollbars if content overflows */
+}
+
+.carousel-container {
+    position: relative; /* For absolute positioning of buttons */
+    width: 600px; /* Max width of your carousel */
+    max-width: 90%; /* Responsive width */
+    height: 400px; /* Fixed height for the carousel */
+    overflow: hidden; /* Crucial: Hides images that are not active */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.carousel-slide {
+    display: flex; /* Flexbox to arrange images side-by-side */
+    transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+    height: 100%; /* Make slide take full height of container */
+}
+
+.carousel-slide img {
+    min-width: 100%; /* Each image takes full width of the slide */
+    height: 100%; /* Each image takes full height of the slide */
+    object-fit: cover; /* Ensures images cover the area without distorting */
+    display: block; /* Remove extra space below images */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%; /* Make buttons round */
+    width: 40px; /* Fixed width for round button */
+    height: 40px; /* Fixed height for round button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    z-index: 10; /* Ensure buttons are above images */
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
